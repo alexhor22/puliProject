@@ -1,6 +1,8 @@
 # puliProject
 Proton partible/Raspberry Pi
 
+Raspberry Pi 3
+https://raspberrypi-spy.co.uk/wp-content/uploads/2012/06/Raspberry-Pi-GPIO-Layout-Model-B-Plus-rotated-2700x900.png
 
 Link funcional para instalar el modulo de RFID en RaspberryPI
 http://www.instructables.com/id/Raspberry-Pi-3-Model-B-MIFARE-RC522-RFID-Tag-Readi/
