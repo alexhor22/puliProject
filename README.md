@@ -13,3 +13,6 @@ http://www.silvinopresa.com/how-to/arduino/rgb-led-common-annode-controlled-by-p
 
 DataSheet Photon Particle
 http://www.farnell.com/datasheets/1960125.pdf
+
+LCD
+http://www.techmake.com/00198.html
