@@ -1,0 +1,16 @@
+//this uses pwm 
+int redPin = D3; 
+int bluePin = D1; 
+int greenPin= D2;
+void setup() {
+  pinMode(redPin, OUTPUT);
+  pinMode(bluePin, OUTPUT);
+  pinMode(greenPin, OUTPUT);
+}
+void loop() {
+ 
+    digitalWrite(D3, LOW); //RED
+    digitalWrite(D1, HIGH); //
+    digitalWrite(D2, LOW);
+}
+Flash successful! Your device is being updated.. Last Event: device/app-hash = E0F12A68CF59297308D1D9D0645811...  scraper_doctor  v0.6.3  
