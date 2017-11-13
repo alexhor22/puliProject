@@ -9,3 +9,4 @@ Habilitar LCD con Raspberry Pi con codigo de ejemplo
 https://learn.adafruit.com/character-lcd-with-raspberry-pi-or-beaglebone-black/usage
 
 RGB Pequeño (no difuso) es del tipo Common Anode, el pin mas largo se alimenta con 5V
+http://www.silvinopresa.com/how-to/arduino/rgb-led-common-annode-controlled-by-potentiometers-and-arduino/
