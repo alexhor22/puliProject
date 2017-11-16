@@ -8,7 +8,7 @@ import Adafruit_CharLCD as LCD
 # Raspberry Pi pin configuration:
 lcd_rs        = 27  # Note this might need to be changed to 21 for older revision Pi's.
 lcd_en        = 22
-lcd_d4        = 25
+lcd_d4        = 21
 lcd_d5        = 24
 lcd_d6        = 23
 lcd_d7        = 18
