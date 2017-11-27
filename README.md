@@ -18,3 +18,7 @@ http://www.farnell.com/datasheets/1960125.pdf
 
 LCD
 http://www.techmake.com/00198.html
+
+Threads
+https://pymotw.com/2/threading/
+
