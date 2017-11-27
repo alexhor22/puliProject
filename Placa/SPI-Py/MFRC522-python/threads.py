@@ -32,7 +32,7 @@ def end_read(signal,frame):
     continue_reading = False
     GPIO.cleanup()
 
-def read():
+def threadRead():
     # Hook the SIGINT
     signal.signal(signal.SIGINT, end_read)
 
@@ -78,7 +78,7 @@ def read():
             else:
                 print "Authentication error"
 
-def lcd():
+def threadLCD():
     # Initialize the LCD using the pins above.
     lcd = LCD.Adafruit_RGBCharLCD(lcd_rs, lcd_en, lcd_d4, lcd_d5, lcd_d6, lcd_d7,
                                   lcd_columns, lcd_rows, lcd_red, lcd_green, lcd_blue)
@@ -118,3 +118,9 @@ def lcd():
     lcd.clear()
     lcd.message('WHITE')
     time.sleep(3.0)
+
+tRead = threading.Thread(name='Read', target=threadRead)
+tLCD = threading.Thread(name='LCD', target=threadLCD)
+
+tRead.start()
+tLCD.start()
