@@ -22,3 +22,7 @@ http://www.techmake.com/00198.html
 Threads
 https://pymotw.com/2/threading/
 
+<h1> Pyrebase </h1> 
+<h4> Como utilizar firebase (DB NoSQL) en Raspberry Pi </h4>
+https://github.com/maggsvisan/Pyrebase
+
