@@ -120,7 +120,7 @@ def threadLCD():
     lcd.message('WHITE')
     time.sleep(3.0)
 
-tRead = threading.Thread(name='Read', target=threadRead)
+tRead = threading.currentThread(name='Read', target=threadRead)
 tLCD = threading.Thread(name='LCD', target=threadLCD)
 
 tRead.start()
