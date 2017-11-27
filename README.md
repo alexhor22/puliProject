@@ -26,3 +26,5 @@ https://pymotw.com/2/threading/
 <h4> Como utilizar firebase (DB NoSQL) en Raspberry Pi </h4>
 https://github.com/maggsvisan/Pyrebase
 
+https://blog.devcolor.org/heating-up-with-firebase-tutorial-on-how-to-integrate-firebase-into-your-app-6ce97440175d
+
