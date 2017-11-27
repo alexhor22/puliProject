@@ -25,6 +25,9 @@ lcd_blue  = 7  # Pin 7 is CE1
 lcd_columns = 16
 lcd_rows    = 2
 
+# Create an object of the class MFRC522
+MIFAREReader = MFRC522.MFRC522()
+
 # Capture SIGINT for cleanup when the script is aborted
 def end_read(signal,frame):
     global continue_reading
@@ -37,9 +40,6 @@ signal.signal(signal.SIGINT, end_read)
 
 def threadRead():
 
-    # Create an object of the class MFRC522
-    MIFAREReader = MFRC522.MFRC522()
-    
     # Welcome message
     print "Welcome to the MFRC522 data read example"
     print "Press Ctrl-C to stop."
