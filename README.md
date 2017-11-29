@@ -22,6 +22,10 @@ http://www.techmake.com/00198.html
 Threads
 https://pymotw.com/2/threading/
 
+<h3> MySQL Raspberry Pi 3 </h3>
+https://pimylifeup.com/raspberry-pi-mysql-phpmyadmin/
+
+
 <h3> Pyrebase </h3> 
 <h4> Como utilizar firebase (DB NoSQL) en Raspberry Pi </h4>
 https://github.com/maggsvisan/Pyrebase
