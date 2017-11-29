@@ -25,12 +25,14 @@ https://pymotw.com/2/threading/
 <h3> MySQL Raspberry Pi 3 </h3>
 https://pimylifeup.com/raspberry-pi-mysql-phpmyadmin/
 
+http://www.hostingadvice.com/how-to/mysql-alter-table/
+
+
 
 <h3> Pyrebase </h3> 
 <h4> Como utilizar firebase (DB NoSQL) en Raspberry Pi </h4>
 https://github.com/maggsvisan/Pyrebase
 
 https://blog.devcolor.org/heating-up-with-firebase-tutorial-on-how-to-integrate-firebase-into-your-app-6ce97440175d
-
 
 https://github.com/rpi-jefer/firebase-leds
