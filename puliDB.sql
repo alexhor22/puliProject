@@ -1,3 +1,13 @@
+
+CREATE TABLE wearable ( 
+    id INT AUTO_INCREMENT NOT NULL PRIMARY KEY, 
+    rfidValue VARCHAR(70) NOT NULL,
+); 
+
+CREATE TABLE board (
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, 
+); 
+
 CREATE TABLE users (
     id INT AUTO_INCREMENT NOT NULL PRIMARY KEY, 
     fName VARCHAR(50) NOT NULL,
@@ -8,32 +18,17 @@ CREATE TABLE users (
     postalCode VARCHAR(30) NOT NULL,
     city VARCHAR(30) NOT NULL,
     phone VARCHAR(30) NOT NULL,
-    boardId INT NOT NULL,
-    wearableId INT NOT NULL,
+    boardID INT NOT NULL,
+    wearableID INT NOT NULL,
 
-    FOREIGN KEY (wearableId) REFERENCES wearable(id),
+    FOREIGN KEY (wearableID) REFERENCES wearable(id),
     FOREIGN KEY (boardId) REFERENCES board(id)
 );
-
-CREATE TABLE wearable ( 
-    id INT AUTO_INCREMENT NOT NULL PRIMARY KEY, 
-    userId INT NOT NULL,
-    rfidValue VARCHAR(50) NOT NULL,
-
-    FOREIGN KEY (userId) REFERENCES user(id)
-); 
-
-CREATE TABLE board (
-    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, 
-    wearableId INT NOT NULL,
-   
-    FOREIGN KEY (wearableId) REFERENCES wearable(id)
-); 
 
 
 CREATE TABLE contacts (  
     id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
-    userid INT NOT NULL,
+    userID INT NOT NULL,
     fName VARCHAR(50) NOT NULL,
     lName VARCHAR(50) NOT NULL,
     street VARCHAR(30) NOT NULL,
@@ -44,7 +39,7 @@ CREATE TABLE contacts (
     phone VARCHAR(30) NOT NULL,
 
 
-    FOREIGN KEY (userid) REFERENCES users(id)
+    FOREIGN KEY (userID) REFERENCES users(id)
 
 );
 
@@ -52,13 +47,12 @@ CREATE TABLE contacts (
     id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
     lat DECIMAL(12,9) NOT NULL,
     lon DECIMAL(12,9) NOT NULL,
-    wearableId INT NOT NULL,
-    boardId INT NOT NULL,
-    timeReg TIME NOT NULL, 
-    dateReg DATE NOT NULL,
+    wearableID INT NOT NULL,
+    boardID INT NOT NULL,
+    dateEvent DATETIME NOT NULL, 
 
-    FOREIGN KEY (wearableId) REFERENCES wearable(id),
-    FOREIGN KEY (boardId) REFERENCES board(id)
+    FOREIGN KEY (wearableID) REFERENCES wearable(id),
+    FOREIGN KEY (boardID) REFERENCES board(id)
 
 );
 
