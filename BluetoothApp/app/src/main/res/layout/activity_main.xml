@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.caceres95.bluetoothapp.MainActivity">
+
+    <Button
+        android:id="@+id/buttonOff"
+        android:layout_width="wrap_content"
+        android:layout_height="53dp"
+        android:layout_marginBottom="11dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="26dp"
+        android:onClick="turnBluetoothOff"
+        android:text="Turn Bluetooth Off"
+        app:layout_constraintBottom_toTopOf="@+id/findDiscoverableDevices"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/findDiscoverableDevices"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="14dp"
+        android:layout_marginStart="10dp"
+        android:onClick="findDiscoverableDevices"
+        android:text="Discover Devices"
+        app:layout_constraintBottom_toTopOf="@+id/viewPairedDevices"
+        app:layout_constraintStart_toStartOf="@+id/buttonOff"
+        app:layout_constraintTop_toBottomOf="@+id/buttonOff" />
+
+    <Button
+        android:id="@+id/viewPairedDevices"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="16dp"
+        android:onClick="viewPairedDevices"
+        android:text="View Paired Devices"
+        app:layout_constraintBottom_toTopOf="@+id/pairedDevicesListView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/findDiscoverableDevices" />
+
+    <ListView
+        android:id="@+id/pairedDevicesListView"
+        android:layout_width="368dp"
+        android:layout_height="230dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/viewPairedDevices" />
+</android.support.constraint.ConstraintLayout>
