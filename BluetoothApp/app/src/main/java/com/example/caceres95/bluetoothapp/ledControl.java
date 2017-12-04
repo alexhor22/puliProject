@@ -2,6 +2,9 @@ package com.example.caceres95.bluetoothapp;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+
 import android.bluetooth.BluetoothSocket;
 import android.content.Intent;
 import android.view.View;
@@ -13,53 +16,80 @@ import android.app.ProgressDialog;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.os.AsyncTask;
+
 import java.io.IOException;
 import java.util.UUID;
+
 
 public class ledControl extends AppCompatActivity {
 
     Button btnOn, btnOff, btnDis;
     SeekBar brightness;
+    TextView lumn;
     String address = null;
     private ProgressDialog progress;
     BluetoothAdapter myBluetooth = null;
     BluetoothSocket btSocket = null;
-    TextView lumn;
     private boolean isBtConnected = false;
+    //SPP UUID. Look for it
     static final UUID myUUID = UUID.fromString("00001101-0000-1000-8000-00805F9B34FB");
 
-
-
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_led_control);
 
-        //receive the address of the bluetooth device
         Intent newint = getIntent();
-        address = newint.getStringExtra(MainActivity.EXTRA_ADDRESS);
+        address = newint.getStringExtra(MainActivity.EXTRA_ADDRESS); //receive the address of the bluetooth device
 
-        //view of the ledControl layout
+        //view of the ledControl
         setContentView(R.layout.activity_led_control);
 
         //call the widgtes
-        btnOn = findViewById(R.id.btnOn);
-        btnOff = findViewById(R.id.btnOff);
-        btnDis = findViewById(R.id.btnDis);
-        brightness = findViewById(R.id.brightness);
-        lumn = findViewById(R.id.lumn);
+        btnOn = (Button)findViewById(R.id.btnOn);
+        btnOff = (Button)findViewById(R.id.btnOff);
+        btnDis = (Button)findViewById(R.id.btnDis);
+        brightness = (SeekBar)findViewById(R.id.brightness);
+        lumn = (TextView)findViewById(R.id.lumn);
 
-        new ConnectBT().execute();
+        new ConnectBT().execute(); //Call the class to connect
+
+        //commands to be sent to bluetooth
+        btnOn.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                turnOnLed();      //method to turn on
+            }
+        });
+
+        btnOff.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v)
+            {
+                turnOffLed();   //method to turn off
+            }
+        });
+
+        btnDis.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                Disconnect(); //close connection
+            }
+        });
 
         brightness.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                if (fromUser)
+                if (fromUser==true)
                 {
                     lumn.setText(String.valueOf(progress));
                     try
                     {
-                        btSocket.getOutputStream().write(String.valueOf(progress).getBytes());
+                        btSocket.getOutputStream().write(progress);
                     }
                     catch (IOException e)
                     {
@@ -78,6 +108,57 @@ public class ledControl extends AppCompatActivity {
 
             }
         });
+    }
+
+    private void Disconnect()
+    {
+        if (btSocket!=null) //If the btSocket is busy
+        {
+            try
+            {
+                btSocket.close(); //close connection
+            }
+            catch (IOException e)
+            { msg("Error");}
+        }
+        finish(); //return to the first layout
+
+    }
+
+    private void turnOffLed()
+    {
+        if (btSocket!=null)
+        {
+            try
+            {
+                btSocket.getOutputStream().write(0);
+            }
+            catch (IOException e)
+            {
+                msg("Error");
+            }
+        }
+    }
+
+    private void turnOnLed()
+    {
+        if (btSocket!=null)
+        {
+            try
+            {
+                btSocket.getOutputStream().write(255);
+            }
+            catch (IOException e)
+            {
+                msg("Error");
+            }
+        }
+    }
+
+    // fast way to call Toast
+    private void msg(String s)
+    {
+        Toast.makeText(getApplicationContext(),s,Toast.LENGTH_LONG).show();
     }
 
     private class ConnectBT extends AsyncTask<Void, Void, Void>  // UI thread
@@ -128,68 +209,4 @@ public class ledControl extends AppCompatActivity {
             progress.dismiss();
         }
     }
-
-    public void ledOn (View view) {
-        turnOnLed();
-    }
-
-    public void ledOff (View view) {
-        turnOffLed();
-    }
-
-    public void ledDis (View view) {
-        Disconnect();
-    }
-
-    private void msg(String s)
-    {
-        Toast.makeText(getApplicationContext(),s,Toast.LENGTH_LONG).show();
-    }
-
-    private void turnOnLed()
-    {
-        if (btSocket!=null)
-        {
-            try
-            {
-                btSocket.getOutputStream().write("TO".toString().getBytes());
-            }
-            catch (IOException e)
-            {
-                msg("Error");
-            }
-        }
-    }
-
-
-    private void turnOffLed()
-    {
-        if (btSocket!=null)
-        {
-            try
-            {
-                btSocket.getOutputStream().write("TF".toString().getBytes());
-            }
-            catch (IOException e)
-            {
-                msg("Error");
-            }
-        }
-    }
-
-    private void Disconnect()
-    {
-        if (btSocket!=null) //If the btSocket is busy
-        {
-            try
-            {
-                btSocket.close(); //close connection
-            }
-            catch (IOException e)
-            { msg("Error");}
-        }
-        finish(); //return to the first layout
-    }
-
-
 }

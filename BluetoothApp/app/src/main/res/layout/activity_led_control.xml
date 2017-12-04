@@ -17,7 +17,8 @@
         app:layout_constraintBottom_toTopOf="@+id/btnOff"
         app:layout_constraintEnd_toEndOf="@+id/btnDis"
         app:layout_constraintStart_toStartOf="@+id/btnDis"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="spread" />
 
     <Button
         android:id="@+id/btnOff"
@@ -59,6 +60,8 @@
         android:layout_height="25dp"
         android:layout_marginBottom="46dp"
         android:layout_marginStart="4dp"
+        android:max="255"
+        android:min="0"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/lumn"
