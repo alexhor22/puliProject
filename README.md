@@ -29,10 +29,5 @@ http://www.hostingadvice.com/how-to/mysql-alter-table/
 
 
 
-<h3> Pyrebase </h3> 
-<h4> Como utilizar firebase (DB NoSQL) en Raspberry Pi </h4>
-https://github.com/maggsvisan/Pyrebase
-
-https://blog.devcolor.org/heating-up-with-firebase-tutorial-on-how-to-integrate-firebase-into-your-app-6ce97440175d
-
-https://github.com/rpi-jefer/firebase-leds
+<h3> OpenCV Python2/Python3 </h3> 
+https://www.pyimagesearch.com/2016/04/18/install-guide-raspberry-pi-3-raspbian-jessie-opencv-3/
