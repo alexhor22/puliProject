@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="/Users/maggsvisan/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-tasks/1.4.0/d85884acf6810a3bbbecb587f239005cbc846dc4/bolts-tasks-1.4.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="d85884acf6810a3bbbecb587f239005cbc846dc4">
+        <dex dex="/Users/maggsvisan/Downloads/Instagram/ParseStarterProject/build/intermediates/transforms/dex/debug/folders/1000/10/bolts-tasks-1.4.0_0d6748ca21a716e8f00a139c8e141c693662eeab/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/maggsvisan/Downloads/Instagram/ParseStarterProject/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="60957141a81243967d3dbc5d3ebba177822e20dd">
+        <dex dex="/Users/maggsvisan/Downloads/Instagram/ParseStarterProject/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_9250f40a4d6c8f613f399d12cb1e8f033ffd08c3/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/maggsvisan/Downloads/Instagram/ParseStarterProject/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/23.4.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="c2c594cace5d83a3227b2b6e658ecbfd586d3ed9">
+        <dex dex="/Users/maggsvisan/Downloads/Instagram/ParseStarterProject/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-23.4.0_36701328a35513f89fe816f32ce7a4076742da28/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/maggsvisan/Downloads/Instagram/ParseStarterProject/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="f93bef65b5ad2d67029d1a01720a0593f792ecca">
+        <dex dex="/Users/maggsvisan/Downloads/Instagram/ParseStarterProject/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_ec2ad1140ae0d71a89824c526785a6245e2688ca/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/maggsvisan/.gradle/caches/modules-2/files-2.1/com.parse/parse-android/1.13.0/58a7d54b6a4f28be11f0cecec93097eddf473e6f/parse-android-1.13.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="58a7d54b6a4f28be11f0cecec93097eddf473e6f">
+        <dex dex="/Users/maggsvisan/Downloads/Instagram/ParseStarterProject/build/intermediates/transforms/dex/debug/folders/1000/10/parse-android-1.13.0_f1e99112e53f64fcceccebd24ae9497d720c2bba/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/maggsvisan/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.4.0/support-annotations-23.4.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="ffbe55fdb2bb456b1485831706a9eac3300bb6b8">
+        <dex dex="/Users/maggsvisan/Downloads/Instagram/ParseStarterProject/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-23.4.0_5feb914e9ca4674574276abb2ecf074d9f40275b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/maggsvisan/Downloads/Instagram/ParseStarterProject/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/jars/libs/internal_impl-23.4.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="ea3c07504d2c8f4b13aa17c45c1b68ed9c1c3674">
+        <dex dex="/Users/maggsvisan/Downloads/Instagram/ParseStarterProject/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-23.4.0_45a2a845cc16d1102619514783b0f15962dda212/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/maggsvisan/Downloads/Instagram/ParseStarterProject/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/23.4.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="de4db3785756bfb0915a9f59a9b3f2fea7407be4">
+        <dex dex="/Users/maggsvisan/Downloads/Instagram/ParseStarterProject/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-23.4.0_1e7c0070ba7592d64b048ab5e359bef5504cf777/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/maggsvisan/Downloads/Instagram/ParseStarterProject/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="67bd36ee9340ec7c254108936ad16b24bed160cc">
+        <dex dex="/Users/maggsvisan/Downloads/Instagram/ParseStarterProject/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-23.4.0_7343ca0e465fcda52001019ae5f80d0f3b9c4be7/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/maggsvisan/Downloads/Instagram/ParseStarterProject/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="548f06de403a9409f00554b3ee12a9fdea0e236c">
+        <dex dex="/Users/maggsvisan/Downloads/Instagram/ParseStarterProject/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-23.4.0_56fa95f15176bc0e13d74ce5d46fce6f47e8c325/classes.dex" />
+    </item>
+
+</items>

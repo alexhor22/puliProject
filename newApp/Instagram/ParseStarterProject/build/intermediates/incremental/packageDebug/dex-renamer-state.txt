@@ -1,0 +1,7 @@
+#Mon Dec 04 02:06:20 CST 2017
+base.0=/Users/maggsvisan/Downloads/Instagram/ParseStarterProject/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_9250f40a4d6c8f613f399d12cb1e8f033ffd08c3
+renamed.1=classes.dex
+renamed.0=classes2.dex
+file.1=/Users/maggsvisan/Downloads/Instagram/ParseStarterProject/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_ec2ad1140ae0d71a89824c526785a6245e2688ca/classes.dex
+base.1=/Users/maggsvisan/Downloads/Instagram/ParseStarterProject/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_ec2ad1140ae0d71a89824c526785a6245e2688ca
+file.0=/Users/maggsvisan/Downloads/Instagram/ParseStarterProject/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_9250f40a4d6c8f613f399d12cb1e8f033ffd08c3/classes.dex
