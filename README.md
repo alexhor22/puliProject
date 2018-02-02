@@ -35,3 +35,8 @@ https://www.pyimagesearch.com/2016/04/18/install-guide-raspberry-pi-3-raspbian-j
 <h4> Face Detection OpenCV </h4>
 https://pythonprogramming.net/raspberry-pi-camera-opencv-face-detection-tutorial/
 https://www.youtube.com/watch?v=1I4gHpctXbU
+
+
+<h4> Diseño de cargador para wearable </h4>
+https://dlnmh9ip6v2uc.cloudfront.net/datasheets/Prototyping/TP4056.pdf
+http://www.instructables.com/id/Arduino-Battery-Shield/
