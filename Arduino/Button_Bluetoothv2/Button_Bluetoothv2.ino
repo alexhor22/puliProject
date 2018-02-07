@@ -48,7 +48,7 @@ void loop()
   checkButton();
 
   //for 10 seconds when palarm is activated. Inner loop may desactivate palarm
-  checkCancel();
+  //checkCancel();
 
   //When palarm is activated; desactivates palarm, defines col, activates alarm and sends bluetooth data.
   sendAlarm();
@@ -211,7 +211,7 @@ void checkShutdown()
         if (cont == 15)
         {
           off = true;
-          BTSerial.write("No Alarm\r\n");
+          BTSerial.write("No Alarm2\r\n");
           col = 0;
           glowOff();
         }
@@ -247,11 +247,13 @@ void checkShutdown()
         {
           emergency = false;
           off = true;
-          BTSerial.write("No Alarm\r\n");
+          BTSerial.write("No Alarm3\r\n");
           col = 0;
           glowOff();
         }
+        buttonstate = digitalRead(button);
         cont++;
+        delay(200);
       }
 
       blinkLed();
@@ -288,7 +290,7 @@ void checkEmergency()
       if (cont == 15)
       {
         off = true;
-        BTSerial.write("No Alarm\r\n");
+        BTSerial.write("No Alarm1\r\n");
         col = 0;
         glowOff();
       }
