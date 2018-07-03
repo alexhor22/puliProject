@@ -146,7 +146,7 @@ while(True):
     #Look for faces in the image using the loaded cascade file
     faces = face_cascade.detectMultiScale(gray, 1.1, 5)
 
-    print "Found "+str(len(faces))+" face(s)"
+    #print "Found "+str(len(faces))+" face(s)"
 
     contFaces= len(faces)
     
@@ -154,7 +154,7 @@ while(True):
     print contFaces
 
     if contFaces>=1:
-        print ("LED on")
+        #print ("LED on")
         #Draw a rectangle around every found face
         for (x,y,w,h) in faces:
             cv2.rectangle(image,(x,y),(x+w,y+h),(255,255,0),2)
@@ -166,13 +166,13 @@ while(True):
         time.sleep(2)
         
     elif contFaces == 0:
-        print("entra aqui")
-        print ("LED off")
+        #print("entra aqui")
+        #print ("LED off")
         GPIO.output(26,GPIO.LOW)
         time.sleep(2)
 
     else:
-        print "se sale de todo"
+        #print "se sale de todo"
 
     GPIO.cleanup()
 
