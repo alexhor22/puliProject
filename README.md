@@ -41,5 +41,6 @@ https://www.youtube.com/watch?v=1I4gHpctXbU
 https://dlnmh9ip6v2uc.cloudfront.net/datasheets/Prototyping/TP4056.pdf
 http://www.instructables.com/id/Arduino-Battery-Shield/
 
-<h4> Version final de codigo: PLACA </h4>
+<h4> Version final de codigo en Raspberry </h4>
 /home/pi/Documents/puliProject/Placa/SPI-Py/MFRC522-python/rfidTestStates_ButtonsFaster.py
+/home/pi/Documents/puliProject/Placa/SPI-Py/MFRC522-python/detectFaceLedSound.py 
