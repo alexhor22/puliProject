@@ -40,3 +40,6 @@ https://www.youtube.com/watch?v=1I4gHpctXbU
 <h4> Diseño de cargador para wearable </h4>
 https://dlnmh9ip6v2uc.cloudfront.net/datasheets/Prototyping/TP4056.pdf
 http://www.instructables.com/id/Arduino-Battery-Shield/
+
+<h4> Version final de codigo: PLACA </h4>
+/home/pi/Documents/puliProject/Placa/SPI-Py/MFRC522-python/rfidTestStates_ButtonsFaster.py
