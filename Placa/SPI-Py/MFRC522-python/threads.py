@@ -123,7 +123,6 @@ print "Press Ctrl-C to stop."
 # This loop keeps checking for chips. If one is near it will get the UID and authenticate
 threads = []
 while continue_reading:
-    tRead = threading.Thread(name='Read', target=threadRead)
     threads.append(tRead)
     tRead.start()
-    tRead.join()
+    tRead.join()s
