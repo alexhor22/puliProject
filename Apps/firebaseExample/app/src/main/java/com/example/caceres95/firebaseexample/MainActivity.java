@@ -58,11 +58,15 @@ public class MainActivity extends AppCompatActivity {
         mDatabase.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                // Get Post object and use the values to update the UI
-                String val = dataSnapshot.getValue(String.class);
-                // [START_EXCLUDE]
-                txHello.setText(val);
-                // [END_EXCLUDE]
+                String name = dataSnapshot.child("User").child("Name").getValue(String.class);
+                txHello.setText(name + "\n");
+                //Log.d("TAG", age);
+                /*for(DataSnapshot ds : dataSnapshot.getChildren()) {
+                    Long age = ds.child("Age").getValue(Long.class);
+                    String name = ds.child("Name").getValue(String.class);
+                    txHello.setText(name + "\n");
+                    //Log.d("TAG", address + " / " + name);
+                }*/
             }
 
             @Override
@@ -71,6 +75,8 @@ public class MainActivity extends AppCompatActivity {
                 Log.w(TAG, "Failed to read value.", error.toException());
             }
         });
+
+        mDatabase.child("Status").setValue("0");
     }
 
     /*private void signIn(String email, String password) {

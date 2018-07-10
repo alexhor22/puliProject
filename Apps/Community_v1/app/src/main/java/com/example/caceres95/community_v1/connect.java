@@ -1,35 +1,48 @@
-package com.example.caceres95.bluerx;
+package com.example.caceres95.community_v1;
 
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-
+import android.app.ProgressDialog;
+import android.bluetooth.BluetoothAdapter;
+import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothSocket;
 import android.content.Intent;
+import android.os.AsyncTask;
+import android.os.Bundle;
+import android.os.Handler;
+import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.app.ProgressDialog;
-import android.bluetooth.BluetoothAdapter;
-import android.bluetooth.BluetoothDevice;
-import android.os.AsyncTask;
-import android.os.Handler;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.UUID;
-import java.io.InputStream;
 
 
 public class connect extends AppCompatActivity {
 
     Button btnDis;
     TextView status;
+    Boolean connected = false;
     String address = null;
     private ProgressDialog progress;
     BluetoothAdapter myBluetooth = null;
     BluetoothSocket btSocket = null;
     private boolean isBtConnected = false;
+
+    private DatabaseReference db;
+    private FirebaseAuth mAuth;
+    private static final String TAG = "MainActivity";
 
     Handler mHandler;
     final int RECIEVE_MESSAGE = 1;
@@ -45,15 +58,18 @@ public class connect extends AppCompatActivity {
     {
         super.onCreate(savedInstanceState);
 
+        db = FirebaseDatabase.getInstance().getReference();
+        mAuth = FirebaseAuth.getInstance();
+
         Intent newint = getIntent();
-        address = newint.getStringExtra(MainActivity.EXTRA_ADDRESS); //receive the address of the bluetooth device
+        address = newint.getStringExtra(com.example.caceres95.community_v1.MainActivity.EXTRA_ADDRESS); //receive the address of the bluetooth device
 
         //view of the ledControl
         setContentView(R.layout.activity_connect);
 
         //call the widgtes
-        btnDis = (Button)findViewById(R.id.btnDis);
-        status = (TextView)findViewById(R.id.alarmStatus);
+        btnDis = findViewById(R.id.btnDis);
+        status = findViewById(R.id.alarmStatus);
 
         new ConnectBT().execute(); //Call the class to connect
 
@@ -76,37 +92,113 @@ public class connect extends AppCompatActivity {
                         sb.append(strIncom);                                                // append string
                         int endOfLineIndex = sb.indexOf("\r\n");                            // determine the end-of-line
                         if (endOfLineIndex > 0) {                                            // if end-of-line,
-                            String sbprint = sb.substring(0, endOfLineIndex);               // extract string
+                            char data = sb.substring(0, endOfLineIndex).charAt(0);               // extract string
+                            db.child("Board").child("Status").setValue(Integer.parseInt(sb.substring(0,1)));
                             sb.delete(0, sb.length());                                      // and clear
-                            if(sbprint.charAt(0) == '0')
+                            if(data == '0')
                             {
                                 status.setText("No Alarm");            // update TextView
                             }
-                            else if(sbprint.charAt(0) == '1')
+                            else if(data == '1')
                             {
                                 status.setText("Crime");
                             }
-                            else if(sbprint.charAt(0) == '2')
+                            else if(data == '2')
                             {
                                 status.setText("Personal Emergency");
                             }
-                            else if(sbprint.charAt(0) == '3')
+                            else if(data == '3')
                             {
                                 status.setText("Suspicious Activity");
                             }
                             else
                             {
                                 //status.setText("-" + sbprint + "-");
-                                status.setText(sbprint.charAt(0));
+                                status.setText(data);
                             }
 
                         }
-                        //Log.d(TAG, "...String:"+ sb.toString() +  "Byte:" + msg.arg1 + "...");
                         break;
                 }
             };
         };
 
+
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+
+        //FirebaseUser currentUser = mAuth.getCurrentUser();
+
+        // Add value event listener to the post
+        // [START post_value_event_listener]
+        db.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                Long actStatus = dataSnapshot.child("Board").child("Status").getValue(Long.class);
+                String message;
+                char info;
+                if(actStatus != null)
+                {
+                    if(actStatus == 0)
+                    {
+                        message = "No Alarm";
+                        info = 0;
+                    }
+                    else if(actStatus == 1)
+                    {
+                        message = "Crime";
+                        info = 'R';
+                    }
+                    else if(actStatus == 2)
+                    {
+                        message = "Personal Emergency";
+                        info = 'B';
+
+                    }
+                    else if(actStatus == 3)
+                    {
+                        message = "Suspicious Activity";
+                        info = 'G';
+                    }
+                    else
+                    {
+                        message = "No Alarm";
+                        info = '0';
+                    }
+                    status.setText(message);
+                    if(connected)
+                    {
+                        sendBT(info);
+                    }
+
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                // Failed to read value
+                Log.w(TAG, "Failed to read value.", error.toException());
+            }
+        });
+    }
+
+    private void sendBT(char info)
+    {
+        if (btSocket!=null) //If the btSocket is busy
+        {
+            try
+            {
+                btSocket.getOutputStream().write(info); //close connection
+            }
+            catch (IOException e)
+            {
+                //msg("Error");
+            }
+        }
+        //finish(); //return to the first layout
 
     }
 
@@ -154,6 +246,7 @@ public class connect extends AppCompatActivity {
                     btSocket = dispositivo.createInsecureRfcommSocketToServiceRecord(myUUID);//create a RFCOMM (SPP) connection
                     BluetoothAdapter.getDefaultAdapter().cancelDiscovery();
                     btSocket.connect();//start connection
+                    connected = true;
                 }
             }
             catch (IOException e)

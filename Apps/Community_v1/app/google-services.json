@@ -1,0 +1,117 @@
+{
+  "project_info": {
+    "project_number": "868139095689",
+    "firebase_url": "https://community-fbbae.firebaseio.com",
+    "project_id": "community-fbbae",
+    "storage_bucket": "community-fbbae.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:868139095689:android:52c7a52f3e6d889c",
+        "android_client_info": {
+          "package_name": "com.example.maggsvisan.communityfirebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "868139095689-32ut0t23tvts3nhec8fbn77lmcrnrfth.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCYi5iNwtSr7Wka1mcZgtdPaC7eyNvVzfA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:868139095689:android:997651945f49610e",
+        "android_client_info": {
+          "package_name": "com.example.maggsvisan.myfirebaseapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "868139095689-32ut0t23tvts3nhec8fbn77lmcrnrfth.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCYi5iNwtSr7Wka1mcZgtdPaC7eyNvVzfA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:868139095689:android:0595faa93710da1f",
+        "android_client_info": {
+          "package_name": "com.example.caceres95.community_v1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "868139095689-749j0c86i9gu3i0dcfhsr29mh2b3uhe0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.caceres95.community_v1",
+            "certificate_hash": "3d9889b1cbc17b8557e136432378b58037f7c10e"
+          }
+        },
+        {
+          "client_id": "868139095689-32ut0t23tvts3nhec8fbn77lmcrnrfth.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCYi5iNwtSr7Wka1mcZgtdPaC7eyNvVzfA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "868139095689-32ut0t23tvts3nhec8fbn77lmcrnrfth.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
