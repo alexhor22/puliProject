@@ -1,0 +1,493 @@
+%CMF
+# %PSECTS Section
+# For each object file, details of its psects are enumerated here.
+# The begining of the section is indicated by %PSECTS.  The first
+# line indicates the name of the first object file, e.g.
+#    $foo.obj
+# Each line that follows describes a psect in that object file, until
+# the next object file.  The lines that describe a psect have the
+# format:
+#    <psect name> <class name> <space> <link address> <load addresses> <length> <delta>
+# All addresses and the length are given in unqualified hexadecimal
+# in delta units.  Any other numeric values are decimal.
+%PSECTS
+$dist/default/production\PERSO.X.production.o
+cinit CODE 0 B B 16 2
+text1 CODE 0 2BA 2BA B 2
+text2 CODE 0 2C5 2C5 B 2
+text3 CODE 0 2D0 2D0 B 2
+text4 CODE 0 2E1 2E1 4 2
+text5 CODE 0 27A 27A 40 2
+text6 CODE 0 1D6 1D6 53 2
+text7 CODE 0 229 229 51 2
+idataCOMMON CODE 0 2DB 2DB 6 2
+maintext CODE 0 21 21 1B5 2
+cstackCOMMON COMMON 1 76 76 4 1
+cstackBANK0 BANK0 1 20 20 14 1
+intentry CODE 0 4 4 6 2
+bssBANK0 BANK0 1 37 37 2 1
+idataBANK0 CODE 0 2E5 2E5 3 2
+dataBANK0 BANK0 1 34 34 3 1
+dataCOMMON COMMON 1 70 70 6 1
+$C:\Users\aleja\AppData\Local\Temp\s794.o
+reset_vec CODE 0 0 0 1 2
+end_init CODE 0 A A 1 2
+config CONFIG 0 2007 2007 1 2
+# %UNUSED Section
+# This section enumerates the unused ranges of each CLASS. Each entry
+# is described on a single line as follows:
+#    <class name> <range> <delta>
+# Addresses given in the range are in hexadecimal and units of delta.
+%UNUSED
+RAM 39-6F 1
+RAM A0-EF 1
+RAM 120-14F 1
+BANK0 39-6F 1
+BANK1 A0-EF 1
+BANK2 120-14F 1
+CONST 1-3 2
+CONST 2E8-7FF 2
+ENTRY 1-3 2
+ENTRY 2E8-7FF 2
+IDLOC 2000-2003 2
+STACK A0-EF 1
+CODE 1-3 2
+CODE 2E8-7FF 2
+SFR0 0-1F 1
+SFR1 80-9F 1
+SFR2 100-11F 1
+SFR3 180-1EF 1
+COMMON 7A-7D 1
+EEDATA 2100-217F 2
+STRCODE 1-3 2
+STRCODE 2E8-7FF 2
+STRING 1-3 2
+STRING 2E8-7FF 2
+# %LINETAB Section
+# This section enumerates the file/line to address mappings.
+# The beginning of the section is indicated by %LINETAB.
+# The first line indicates the name of the first object file, e.g.
+#   $foo.obj
+# Each line that follows describes a single mapping until the next
+# object file.  Mappings have the following format:
+#    <address> <psect name> <class name> ><line number>:<file name>
+# The address is absolute and given given in unqualified hex 
+# in delta units of the psect. All mappings within an object file
+# are in ascending order of addresses.
+# All other numeric values are in decimal.
+%LINETAB
+$dist/default/production\PERSO.X.production.o
+B cinit CODE >355:C:\Users\aleja\AppData\Local\Temp\s794.
+B cinit CODE >358:C:\Users\aleja\AppData\Local\Temp\s794.
+B cinit CODE >392:C:\Users\aleja\AppData\Local\Temp\s794.
+C cinit CODE >393:C:\Users\aleja\AppData\Local\Temp\s794.
+D cinit CODE >394:C:\Users\aleja\AppData\Local\Temp\s794.
+E cinit CODE >395:C:\Users\aleja\AppData\Local\Temp\s794.
+F cinit CODE >396:C:\Users\aleja\AppData\Local\Temp\s794.
+10 cinit CODE >397:C:\Users\aleja\AppData\Local\Temp\s794.
+11 cinit CODE >401:C:\Users\aleja\AppData\Local\Temp\s794.
+12 cinit CODE >402:C:\Users\aleja\AppData\Local\Temp\s794.
+13 cinit CODE >403:C:\Users\aleja\AppData\Local\Temp\s794.
+14 cinit CODE >404:C:\Users\aleja\AppData\Local\Temp\s794.
+15 cinit CODE >405:C:\Users\aleja\AppData\Local\Temp\s794.
+16 cinit CODE >406:C:\Users\aleja\AppData\Local\Temp\s794.
+17 cinit CODE >407:C:\Users\aleja\AppData\Local\Temp\s794.
+18 cinit CODE >408:C:\Users\aleja\AppData\Local\Temp\s794.
+19 cinit CODE >409:C:\Users\aleja\AppData\Local\Temp\s794.
+1A cinit CODE >410:C:\Users\aleja\AppData\Local\Temp\s794.
+1B cinit CODE >411:C:\Users\aleja\AppData\Local\Temp\s794.
+1C cinit CODE >412:C:\Users\aleja\AppData\Local\Temp\s794.
+1D cinit CODE >416:C:\Users\aleja\AppData\Local\Temp\s794.
+1E cinit CODE >417:C:\Users\aleja\AppData\Local\Temp\s794.
+1F cinit CODE >423:C:\Users\aleja\AppData\Local\Temp\s794.
+1F cinit CODE >425:C:\Users\aleja\AppData\Local\Temp\s794.
+20 cinit CODE >426:C:\Users\aleja\AppData\Local\Temp\s794.
+4 intentry CODE >75:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+229 text7 CODE >75:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+229 text7 CODE >77:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+22F text7 CODE >79:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+233 text7 CODE >81:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+234 text7 CODE >82:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+236 text7 CODE >83:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+236 text7 CODE >87:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+242 text7 CODE >88:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+249 text7 CODE >89:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+249 text7 CODE >90:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+252 text7 CODE >91:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+252 text7 CODE >92:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+256 text7 CODE >94:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+25E text7 CODE >96:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+262 text7 CODE >98:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+267 text7 CODE >99:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+270 text7 CODE >100:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+271 text7 CODE >101:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+271 text7 CODE >111:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+273 text7 CODE >112:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+273 text7 CODE >113:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+1D6 text6 CODE >30:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+1D6 text6 CODE >31:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+1E9 text6 CODE >32:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+1FC text6 CODE >33:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+212 text6 CODE >34:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+228 text6 CODE >35:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+27A text5 CODE >18:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+27A text5 CODE >19:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+282 text5 CODE >20:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+284 text5 CODE >21:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+28F text5 CODE >22:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+297 text5 CODE >23:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+299 text5 CODE >24:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+2A4 text5 CODE >25:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+2AC text5 CODE >26:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+2AE text5 CODE >27:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+2B9 text5 CODE >28:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+2E1 text4 CODE >52:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+2E1 text4 CODE >53:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+2E4 text4 CODE >54:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+2D0 text3 CODE >56:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+2D0 text3 CODE >57:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+2D3 text3 CODE >58:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+2D8 text3 CODE >59:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+2D9 text3 CODE >60:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+2DA text3 CODE >61:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+2C5 text2 CODE >62:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+2C5 text2 CODE >63:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+2C8 text2 CODE >64:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+2CD text2 CODE >65:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+2CE text2 CODE >66:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+2CF text2 CODE >67:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+2BA text1 CODE >68:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+2BA text1 CODE >69:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+2BD text1 CODE >70:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+2C2 text1 CODE >71:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+2C3 text1 CODE >72:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+2C4 text1 CODE >73:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+21 maintext CODE >115:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+21 maintext CODE >116:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+27 maintext CODE >117:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+29 maintext CODE >118:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+2A maintext CODE >119:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+2D maintext CODE >120:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+2F maintext CODE >121:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+31 maintext CODE >122:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+32 maintext CODE >123:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+35 maintext CODE >124:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+38 maintext CODE >125:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+39 maintext CODE >126:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+3A maintext CODE >127:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+3D maintext CODE >128:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+3E maintext CODE >129:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+41 maintext CODE >130:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+42 maintext CODE >131:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+43 maintext CODE >132:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+44 maintext CODE >133:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+46 maintext CODE >135:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+46 maintext CODE >137:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+4F maintext CODE >138:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+50 maintext CODE >139:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+51 maintext CODE >140:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+51 maintext CODE >141:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+58 maintext CODE >142:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+59 maintext CODE >143:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+5A maintext CODE >144:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+5A maintext CODE >145:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+61 maintext CODE >146:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+62 maintext CODE >147:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+63 maintext CODE >148:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+63 maintext CODE >149:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+64 maintext CODE >150:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+65 maintext CODE >151:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+67 maintext CODE >152:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+68 maintext CODE >153:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+68 maintext CODE >154:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+68 maintext CODE >156:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+72 maintext CODE >159:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+83 maintext CODE >160:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+96 maintext CODE >161:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+AC maintext CODE >162:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+C2 maintext CODE >166:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+CA maintext CODE >168:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+CE maintext CODE >169:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+D2 maintext CODE >170:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+D3 maintext CODE >171:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+D3 maintext CODE >172:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+D9 maintext CODE >174:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+DD maintext CODE >175:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+E1 maintext CODE >176:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+E2 maintext CODE >177:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+E2 maintext CODE >178:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+E8 maintext CODE >180:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+EC maintext CODE >181:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+F1 maintext CODE >182:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+F2 maintext CODE >183:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+F2 maintext CODE >184:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+F2 maintext CODE >185:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+F6 maintext CODE >186:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+FA maintext CODE >188:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+FB maintext CODE >189:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+109 maintext CODE >192:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+10C maintext CODE >194:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+11B maintext CODE >195:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+139 maintext CODE >196:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+142 maintext CODE >197:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+143 maintext CODE >198:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+148 maintext CODE >199:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+14E maintext CODE >200:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+14F maintext CODE >201:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+15E maintext CODE >202:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+161 maintext CODE >203:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+165 maintext CODE >204:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+169 maintext CODE >205:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+178 maintext CODE >206:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+17D maintext CODE >207:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+17D maintext CODE >208:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+17E maintext CODE >209:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+18A maintext CODE >210:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+193 maintext CODE >211:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+199 maintext CODE >212:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+19A maintext CODE >213:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+19A maintext CODE >214:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+19C maintext CODE >215:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+1A2 maintext CODE >216:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+1A3 maintext CODE >217:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+1A4 maintext CODE >218:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+1AC maintext CODE >219:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+1AD maintext CODE >220:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+1AE maintext CODE >221:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+1B6 maintext CODE >222:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+1B8 maintext CODE >223:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+1BA maintext CODE >224:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+1C1 maintext CODE >225:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+1C1 maintext CODE >226:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+1C6 maintext CODE >227:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+1C8 maintext CODE >228:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+1D4 maintext CODE >229:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+1D5 maintext CODE >231:C:\Users\aleja\MPLABXProjects\PERSO.X\main.c
+# %SYMTAB Section
+# An enumeration of all symbols in the program.
+# The beginning of the section is indicated by %SYMTAB.
+# Each line describes a single symbol as follows:
+#    <label> <value> [-]<load-adj> <class> <space> <psect> <file-name>
+# The value and load-adj are both in unqualified hexadecimal.
+# All other numeric values are in decimal.  The load-adj is the
+# quantity one needs to add to the symbol value in order to obtain the load
+# address of the symbol.  This value may be signed. If the symbol
+# was defined in a psect then <psect> will be "-". File-name
+# is the name of the object file in which the symbol was defined.
+%SYMTAB
+___latbits 0 0 ABS 0 - dist/default/production\PERSO.X.production.o
+__LdataBANK0 0 0 ABS 0 dataBANK0 -
+__Hspace_0 2008 0 ABS 0 - -
+__Hspace_1 7A 0 ABS 0 - -
+__Hspace_2 0 0 ABS 0 - -
+__Hspace_3 0 0 ABS 0 - -
+__HidataBANK0 0 0 ABS 0 idataBANK0 -
+delay@i 20 0 BANK0 1 cstackBANK0 dist/default/production\PERSO.X.production.o
+delay@j 22 0 BANK0 1 cstackBANK0 dist/default/production\PERSO.X.production.o
+__Heeprom_data 0 0 EEDATA 3 eeprom_data -
+main@i 2D 0 BANK0 1 cstackBANK0 dist/default/production\PERSO.X.production.o
+main@j 2F 0 BANK0 1 cstackBANK0 dist/default/production\PERSO.X.production.o
+__Hstrings 0 0 ABS 0 strings -
+_BRGH 4C2 0 ABS 0 - dist/default/production\PERSO.X.production.o
+_CREN C4 0 ABS 0 - dist/default/production\PERSO.X.production.o
+_INTE 5C 0 ABS 0 - dist/default/production\PERSO.X.production.o
+_INTF 59 0 ABS 0 - dist/default/production\PERSO.X.production.o
+_OERR C1 0 ABS 0 - dist/default/production\PERSO.X.production.o
+_PEIE 5E 0 ABS 0 - dist/default/production\PERSO.X.production.o
+_RCIE 465 0 ABS 0 - dist/default/production\PERSO.X.production.o
+_RCIF 65 0 ABS 0 - dist/default/production\PERSO.X.production.o
+_SPEN C7 0 ABS 0 - dist/default/production\PERSO.X.production.o
+_SREN C5 0 ABS 0 - dist/default/production\PERSO.X.production.o
+_TXEN 4C5 0 ABS 0 - dist/default/production\PERSO.X.production.o
+_TXIE 464 0 ABS 0 - dist/default/production\PERSO.X.production.o
+_TXIF 64 0 ABS 0 - dist/default/production\PERSO.X.production.o
+___sp 0 0 STACK 2 stack C:\Users\aleja\AppData\Local\Temp\s794.o
+_flag 37 0 BANK0 1 bssBANK0 dist/default/production\PERSO.X.production.o
+_main 42 0 CODE 0 maintext dist/default/production\PERSO.X.production.o
+btemp 7E 0 ABS 0 - dist/default/production\PERSO.X.production.o
+start 14 0 CODE 0 init C:\Users\aleja\AppData\Local\Temp\s794.o
+__CFG_BOREN$OFF 0 0 ABS 0 - dist/default/production\PERSO.X.production.o
+__size_of_main 0 0 ABS 0 - dist/default/production\PERSO.X.production.o
+__LidataBANK0 0 0 ABS 0 idataBANK0 -
+__Hpowerup 0 0 CODE 0 powerup -
+__HdataCOMMON 0 0 ABS 0 dataCOMMON -
+intlevel0 0 0 ENTRY 0 functab C:\Users\aleja\AppData\Local\Temp\s794.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\aleja\AppData\Local\Temp\s794.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\aleja\AppData\Local\Temp\s794.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\aleja\AppData\Local\Temp\s794.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\aleja\AppData\Local\Temp\s794.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\aleja\AppData\Local\Temp\s794.o
+_turnOff 5C2 0 CODE 0 text4 dist/default/production\PERSO.X.production.o
+wtemp0 7E 0 ABS 0 - dist/default/production\PERSO.X.production.o
+__Hfunctab 0 0 ENTRY 0 functab -
+__size_of_sendHealthAlert 0 0 ABS 0 - dist/default/production\PERSO.X.production.o
+__Hclrtext 0 0 ABS 0 clrtext -
+__pidataCOMMON 5B6 0 CODE 0 idataCOMMON dist/default/production\PERSO.X.production.o
+__LdataCOMMON 0 0 ABS 0 dataCOMMON -
+__Lmaintext 0 0 ABS 0 maintext -
+_INTEDG 40E 0 ABS 0 - dist/default/production\PERSO.X.production.o
+__size_of_delay 0 0 ABS 0 - dist/default/production\PERSO.X.production.o
+__LidataCOMMON 0 0 ABS 0 idataCOMMON -
+__CFG_MCLRE$OFF 0 0 ABS 0 - dist/default/production\PERSO.X.production.o
+start_initialization 16 0 CODE 0 cinit dist/default/production\PERSO.X.production.o
+__CFG_FOSC$INTOSCIO 0 0 ABS 0 - dist/default/production\PERSO.X.production.o
+__size_of_sendCrimeAlert 0 0 ABS 0 - dist/default/production\PERSO.X.production.o
+__pcstackBANK0 20 0 BANK0 1 cstackBANK0 dist/default/production\PERSO.X.production.o
+__size_of_sendSuspiciousAlert 0 0 ABS 0 - dist/default/production\PERSO.X.production.o
+___int_sp 0 0 STACK 2 stack C:\Users\aleja\AppData\Local\Temp\s794.o
+__Hbank0 0 0 ABS 0 bank0 -
+__Hbank1 0 0 ABS 0 bank1 -
+__Hbank2 0 0 ABS 0 bank2 -
+__Hbank3 0 0 BANK3 1 bank3 -
+__Hcinit 42 0 CODE 0 cinit -
+_sendCharBT 4F4 0 CODE 0 text5 dist/default/production\PERSO.X.production.o
+__Hidloc 0 0 IDLOC 0 idloc -
+__Hstack 0 0 STACK 2 stack -
+__Hmaintext 0 0 ABS 0 maintext -
+__Hcommon 0 0 ABS 0 common -
+__Hconfig 4010 0 CONFIG 0 config -
+__Lbank0 0 0 ABS 0 bank0 -
+__Lbank1 0 0 ABS 0 bank1 -
+__Lbank2 0 0 ABS 0 bank2 -
+__Lbank3 0 0 BANK3 1 bank3 -
+__Lcinit 16 0 CODE 0 cinit -
+__Lidloc 0 0 IDLOC 0 idloc -
+__Lstack 0 0 STACK 2 stack -
+__Habs1 0 0 ABS 0 abs1 -
+__Hcode 0 0 ABS 0 code -
+__Hinit 14 0 CODE 0 init -
+__Hsfr0 0 0 ABS 0 sfr0 -
+__Hsfr1 0 0 ABS 0 sfr1 -
+__Hsfr2 0 0 ABS 0 sfr2 -
+__Hsfr3 0 0 ABS 0 sfr3 -
+__Htext 0 0 ABS 0 text -
+__Labs1 0 0 ABS 0 abs1 -
+__Lcode 0 0 ABS 0 code -
+__Linit 14 0 CODE 0 init -
+__Lsfr0 0 0 ABS 0 sfr0 -
+__Lsfr1 0 0 ABS 0 sfr1 -
+__Lsfr2 0 0 ABS 0 sfr2 -
+__Lsfr3 0 0 ABS 0 sfr3 -
+__Ltext 0 0 ABS 0 text -
+_sendSuspiciousAlert 574 0 CODE 0 text1 dist/default/production\PERSO.X.production.o
+__LcstackBANK0 0 0 ABS 0 cstackBANK0 -
+__HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
+_GIE 5F 0 ABS 0 - dist/default/production\PERSO.X.production.o
+_ISR 452 0 CODE 0 text7 dist/default/production\PERSO.X.production.o
+_RA0 28 0 ABS 0 - dist/default/production\PERSO.X.production.o
+_RA1 29 0 ABS 0 - dist/default/production\PERSO.X.production.o
+_RA2 2A 0 ABS 0 - dist/default/production\PERSO.X.production.o
+_RB0 30 0 ABS 0 - dist/default/production\PERSO.X.production.o
+_RB3 33 0 ABS 0 - dist/default/production\PERSO.X.production.o
+_RB5 35 0 ABS 0 - dist/default/production\PERSO.X.production.o
+__S0 2008 0 ABS 0 - -
+__S1 7A 0 ABS 0 - -
+__S2 0 0 ABS 0 - -
+__S3 0 0 ABS 0 - -
+saved_w 7E 0 ABS 0 - dist/default/production\PERSO.X.production.o
+__HidataCOMMON 0 0 ABS 0 idataCOMMON -
+__end_of_sendCharBT 574 0 CODE 0 text5 dist/default/production\PERSO.X.production.o
+__end_of_ISR 4F4 0 CODE 0 text7 dist/default/production\PERSO.X.production.o
+__Lintentry 8 0 CODE 0 intentry -
+reset_vec 0 0 CODE 0 reset_vec C:\Users\aleja\AppData\Local\Temp\s794.o
+__pdataBANK0 34 0 BANK0 1 dataBANK0 dist/default/production\PERSO.X.production.o
+__LbssBANK0 0 0 ABS 0 bssBANK0 -
+__size_of_turnOff 0 0 ABS 0 - dist/default/production\PERSO.X.production.o
+__pmaintext 42 0 CODE 0 maintext dist/default/production\PERSO.X.production.o
+__Lcommon 0 0 ABS 0 common -
+__Lconfig 400E 0 CONFIG 0 config -
+__CFG_WDTE$OFF 0 0 ABS 0 - dist/default/production\PERSO.X.production.o
+main@i_91 31 0 BANK0 1 cstackBANK0 dist/default/production\PERSO.X.production.o
+main@time 2B 0 BANK0 1 cstackBANK0 dist/default/production\PERSO.X.production.o
+main@alert 33 0 BANK0 1 cstackBANK0 dist/default/production\PERSO.X.production.o
+__end_of_sendSuspiciousAlert 58A 0 CODE 0 text1 dist/default/production\PERSO.X.production.o
+stackhi 0 0 ABS 0 - C:\Users\aleja\AppData\Local\Temp\s794.o
+stacklo 0 0 ABS 0 - C:\Users\aleja\AppData\Local\Temp\s794.o
+__CFG_LVP$OFF 0 0 ABS 0 - dist/default/production\PERSO.X.production.o
+__Lspace_0 0 0 ABS 0 - -
+__Lspace_1 0 0 ABS 0 - -
+__Lspace_2 0 0 ABS 0 - -
+__Lspace_3 0 0 ABS 0 - -
+__HcstackBANK0 0 0 ABS 0 cstackBANK0 -
+__Lend_init 14 0 CODE 0 end_init -
+__LcstackCOMMON 0 0 ABS 0 cstackCOMMON -
+end_of_initialization 3E 0 CODE 0 cinit dist/default/production\PERSO.X.production.o
+__Hintentry 14 0 CODE 0 intentry -
+__Lstrings 0 0 ABS 0 strings -
+__Hreset_vec 2 0 CODE 0 reset_vec -
+__HbssBANK0 0 0 ABS 0 bssBANK0 -
+sendCharBT@alertType 20 0 BANK0 1 cstackBANK0 dist/default/production\PERSO.X.production.o
+__end_of_turnOff 5CA 0 CODE 0 text4 dist/default/production\PERSO.X.production.o
+__ptext1 574 0 CODE 0 text1 dist/default/production\PERSO.X.production.o
+__ptext2 58A 0 CODE 0 text2 dist/default/production\PERSO.X.production.o
+__ptext3 5A0 0 CODE 0 text3 dist/default/production\PERSO.X.production.o
+__ptext4 5C2 0 CODE 0 text4 dist/default/production\PERSO.X.production.o
+__ptext5 4F4 0 CODE 0 text5 dist/default/production\PERSO.X.production.o
+__ptext6 3AC 0 CODE 0 text6 dist/default/production\PERSO.X.production.o
+__ptext7 452 0 CODE 0 text7 dist/default/production\PERSO.X.production.o
+_sendCrimeAlert 5A0 0 CODE 0 text3 dist/default/production\PERSO.X.production.o
+__Lpowerup 0 0 CODE 0 powerup -
+__Leeprom_data 0 0 EEDATA 3 eeprom_data -
+__Lreset_vec 0 0 CODE 0 reset_vec -
+_receivedAlert 34 0 BANK0 1 dataBANK0 dist/default/production\PERSO.X.production.o
+__end_of__initialization 3E 0 CODE 0 cinit dist/default/production\PERSO.X.production.o
+__Lfunctab 0 0 ENTRY 0 functab -
+__size_of_sendCharBT 0 0 ABS 0 - dist/default/production\PERSO.X.production.o
+__pidataBANK0 5CA 0 CODE 0 idataBANK0 dist/default/production\PERSO.X.production.o
+__Lclrtext 0 0 ABS 0 clrtext -
+__end_of_sendHealthAlert 5A0 0 CODE 0 text2 dist/default/production\PERSO.X.production.o
+__CFG_PWRTE$ON 0 0 ABS 0 - dist/default/production\PERSO.X.production.o
+__pcstackCOMMON 76 0 COMMON 1 cstackCOMMON dist/default/production\PERSO.X.production.o
+__Hend_init 16 0 CODE 0 end_init -
+__end_of_main 3AC 0 CODE 0 maintext dist/default/production\PERSO.X.production.o
+__end_of_sendCrimeAlert 5B6 0 CODE 0 text3 dist/default/production\PERSO.X.production.o
+__end_of_delay 452 0 CODE 0 text6 dist/default/production\PERSO.X.production.o
+_PORTA 5 0 ABS 0 - dist/default/production\PERSO.X.production.o
+_RCREG 1A 0 ABS 0 - dist/default/production\PERSO.X.production.o
+_SPBRG 99 0 ABS 0 - dist/default/production\PERSO.X.production.o
+_TRISA 85 0 ABS 0 - dist/default/production\PERSO.X.production.o
+_TRISB 86 0 ABS 0 - dist/default/production\PERSO.X.production.o
+_TXREG 19 0 ABS 0 - dist/default/production\PERSO.X.production.o
+__Hram 0 0 ABS 0 ram -
+__Lram 0 0 ABS 0 ram -
+interrupt_function 8 0 CODE 0 intentry dist/default/production\PERSO.X.production.o
+_delay 3AC 0 CODE 0 text6 dist/default/production\PERSO.X.production.o
+_nRBPU 40F 0 ABS 0 - dist/default/production\PERSO.X.production.o
+__pintentry 8 0 CODE 0 intentry dist/default/production\PERSO.X.production.o
+__size_of_ISR 0 0 ABS 0 - dist/default/production\PERSO.X.production.o
+__HdataBANK0 0 0 ABS 0 dataBANK0 -
+__initialization 16 0 CODE 0 cinit dist/default/production\PERSO.X.production.o
+__pbssBANK0 37 0 BANK0 1 bssBANK0 dist/default/production\PERSO.X.production.o
+__pdataCOMMON 70 0 COMMON 1 dataCOMMON dist/default/production\PERSO.X.production.o
+_counter 36 0 BANK0 1 dataBANK0 dist/default/production\PERSO.X.production.o
+_sendHealthAlert 58A 0 CODE 0 text2 dist/default/production\PERSO.X.production.o
+# %SPLITSTAB Section
+# This section enumerates all the psect splits performed by the assembler.
+# The beginning of the section is indicated by %SPLITSTAB.
+# Each line is a record a particular split, where the parent psect is on
+# the left and the child on the right.  Note that a child psect is always
+# split form the top of the parent psect. All splits from a given parent
+# are listed in the order in which they occurred.
+%SPLITSTAB
+# %DABS Section
+# This section contains a table of all usuage of the assember
+# directive DABS in the program. Each line has the following format:
+#   <name> <space> <address> <size>
+# If the DABS was originally labelled then that shall be <name>,
+# otherwise name will be "-".  The <space> number is in decimal.
+# <address> and <size> are in byte units as unqaulified hexadecimal
+%DABS
+- 1 7E 2
+# %SEGMENTS Section
+# This sections enumerates the segments of the program.  Each segment
+# is described on a single line as follows:
+#    <name> <space> <link address> <file address> <size> <delta>
+# Addresses and size are in unqualified hexadecimal.  The link address
+# and size are in units of delta. The file address is in units of bytes.
+# All other numeric quantities are in decimal.
+%SEGMENTS
+cstackBANK0 1 20 20 19 1
+intentry 0 4 8 2E4 2
+reset_vec 0 0 0 1 2
+dataCOMMON 1 70 70 A 1
+config 0 2007 400E 1 2
