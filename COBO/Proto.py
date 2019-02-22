@@ -70,7 +70,7 @@ if __name__ == '__main__':
         while not done:
                 alert_status = firebase.get('Board/Status',None)
                 
-                if alert_status != last_status: #Cheks if the status changed and if an alert is receibed it is displayed
+                if alert_status != last_status: #Cheks if the status changed and if an alert is received it is displayed
                         main_screen_is_showing = False
                         if alert_status == 3:
                                 show_suspicious_screen()
