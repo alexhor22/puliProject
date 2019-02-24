@@ -3,15 +3,23 @@
 
 
 void vibrate(){
-//  Serial.println("vibrate");
-//  digitalWrite(VIBRATOR,LOW);
-//  delay(250);
-//  digitalWrite(VIBRATOR,HIGH);
-//  delay(250);
-//  digitalWrite(VIBRATOR,LOW);
-//  delay(250);
-//  digitalWrite(VIBRATOR,HIGH);
-//  delay(250);
+  Serial.println("vibrate");
+  digitalWrite(VIBRATOR,HIGH);
+  delay(250);
+  digitalWrite(VIBRATOR,LOW);
+  delay(250);
+  digitalWrite(VIBRATOR,HIGH);
+  delay(250);
+  digitalWrite(VIBRATOR,LOW);
+  delay(250);
+}
+
+void vibrateCancel(){
+  Serial.println("vibrate");
+  digitalWrite(VIBRATOR,HIGH);
+  delay(500);
+  digitalWrite(VIBRATOR,LOW);
+
 }
 
 
