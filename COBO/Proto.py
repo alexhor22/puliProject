@@ -57,7 +57,7 @@ def show_pe_screen():
         if i_sended_the_alert:
                 screen.blit(screen_resize(get_image(images_path + 'pe_cancel.png')),(0,0))
         else:
-                screen.blit(screen_resize(get_image(images_path + 'pe.png')),(0,0))
+                screen.blit(screen_resize(get_image(images_path + 'pe2.png')),(0,0))
 
 def show_suspicious_screen():
         if i_sended_the_alert:
@@ -70,48 +70,55 @@ if __name__ == '__main__':
         main_screen_is_showing = True
         show_main_screen()
         while not done:
-                alert_status = firebase.get('Board/Status',None)
-                
-                if alert_status != last_status: #Cheks if the status changed and if an alert is received it is displayed
-                        main_screen_is_showing = False
-                        if alert_status == 3:                  
-                                show_crime_screen()
-                        elif alert_status == 2:
-                                show_pe_screen()
-                        elif alert_status == 1:
-                                show_suspicious_screen()                        
-                        else:                       
-                                show_main_screen()                    
-                                main_screen_is_showing = True
-                                i_sended_the_alert = False
+                try:
+                        alert_status = firebase.get('Board/Status',None)
+                        
+                        if alert_status != last_status: #Cheks if the status changed and if an alert is received it is displayed
+                                main_screen_is_showing = False
+                                if alert_status == 3:                  
+                                        show_crime_screen()
+                                elif alert_status == 2:
+                                        show_pe_screen()
+                                elif alert_status == 1:
+                                        show_suspicious_screen()                        
+                                else:                       
+                                        show_main_screen()                    
+                                        main_screen_is_showing = True
+                                        i_sended_the_alert = False
 
-                for event in pygame.event.get():
-                        if event.type == pygame.QUIT:
-                                done = True
-                                break
-                        elif event.type == pygame.MOUSEBUTTONUP:
-        		        x,y = pygame.mouse.get_pos()
-                                # print x,y
-                                # print x/float(screen_width) , y/float(screen_heigth)
-                                
-                                if main_screen_is_showing:
-                                        if   0.328703703704 <= y/float(screen_heigth)  and  y/float(screen_heigth) <= 0.692592592593: #IS IN Y RANGE
-                                                if 0.16875 <= x/float(screen_width) and x/float(screen_width) <= 0.304166666667:
-                                                        screen.blit(screen_resize(get_image(images_path + 'pe_selected.png')),(0,0))
-                                                        firebase.put('Board','Status',2)
-                                                        i_sended_the_alert = True
-                                                elif 0.383333333333<= x/float(screen_width) and x/float(screen_width) <= 0.623958333333:
-                                                        screen.blit(screen_resize(get_image(images_path + 'suspicious_selected.png')),(0,0))
-                                                        firebase.put('Board','Status',1)
-                                                        i_sended_the_alert = True
-                                                elif 0.7 <= x/float(screen_width) and x/float(screen_width) <= 0.939583333333:
-                                                        screen.blit(screen_resize(get_image(images_path + 'crime_selected.png')),(0,0))
-                                                        firebase.put('Board','Status',3)
-                                                        i_sended_the_alert = True
-                                else:
-                                        if ( 0.822395833333 <= x/float(screen_width) and x/float(screen_width) <= 0.959895833333) and (0.736111111111<= y/float(screen_heigth) and y/float(screen_heigth) <= 0.940740740741) and i_sended_the_alert:
-                                                firebase.put('Board','Status',0)
-                                
+                        for event in pygame.event.get():
+                                if event.type == pygame.QUIT:
+                                        done = True
+                                        break
+                                elif event.type == pygame.MOUSEBUTTONUP:
+                		        x,y = pygame.mouse.get_pos()
+                                        # print x,y
+                                        print x/float(screen_width) , y/float(screen_heigth)
+                                        
+                                        if main_screen_is_showing:
+                                                if   0.367592592593 <= y/float(screen_heigth)  and  y/float(screen_heigth) <= 0.75462962963: #IS IN Y RANGE
+                                                        if 0.0473958333333 <= x/float(screen_width) and x/float(screen_width) <= 0.30625:
+                                                                screen.blit(screen_resize(get_image(images_path + 'pe_selected.png')),(0,0))
+                                                                firebase.put('Board','Status',2)
+                                                                i_sended_the_alert = True
+                                                        elif 0.40625 <= x/float(screen_width) and x/float(screen_width) <= 0.636458333333:
+                                                                screen.blit(screen_resize(get_image(images_path + 'suspicious_selected.png')),(0,0))
+                                                                firebase.put('Board','Status',1)
+                                                                i_sended_the_alert = True
+                                                        elif 0.694791666667 <= x/float(screen_width) and x/float(screen_width) <= 0.955208333333:
+                                                                screen.blit(screen_resize(get_image(images_path + 'crime_selected.png')),(0,0))
+                                                                firebase.put('Board','Status',3)
+                                                                i_sended_the_alert = True
+                                        else:
+                                                if ( 0.822395833333 <= x/float(screen_width) and x/float(screen_width) <= 0.959895833333) and (0.736111111111<= y/float(screen_heigth) and y/float(screen_heigth) <= 0.940740740741) and i_sended_the_alert:
+                                                        firebase.put('Board','Status',0)
+                                                 
+                        last_status = alert_status
+
+                except Exception as e:
+                        print e
+                        screen.blit(screen_resize(get_image(images_path + 'no_connection.png')),(0,0))
+                        # screen.fill((255,255,255))
+
                 pygame.display.flip()
                 clock.tick(10)
-                last_status = alert_status
