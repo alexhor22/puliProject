@@ -2,7 +2,7 @@ import pygame
 from firebase import firebase
 import os
 
-images_path = 'C:/Users/aleja/Documents/puliProject/COBO/images/'
+images_path = '/home/pi/Documents/puliProject/COBO/images/'#'C:/Users/aleja/Documents/puliProject/COBO/images/'
 
 _image_library = {}
 
