@@ -98,23 +98,25 @@ if __name__ == '__main__':
                 		        x,y = pygame.mouse.get_pos()
                                         # print x,y
                                         print x/float(screen_width) , y/float(screen_heigth)
+                                        x = screen_width - x
+                                        y = screen_heigth - y
                                         
                                         if main_screen_is_showing:
-                                                if   0.367592592593 <= y/float(screen_heigth)  and  y/float(screen_heigth) <= 0.75462962963: #IS IN Y RANGE
-                                                        if 0.0473958333333 <= x/float(screen_width) and x/float(screen_width) <= 0.30625:
+                                                if   0.359375 <= y/float(screen_heigth)  and  y/float(screen_heigth) <= 0.75625: #IS IN Y RANGE
+                                                        if 0.0479166666667 <= x/float(screen_width) and x/float(screen_width) <= 0.304166666667:
                                                                 screen.blit(screen_resize(get_image(images_path + 'pe_selected.png')),(0,0))
                                                                 firebase.put('Board','Status',2)
                                                                 i_sended_the_alert = True
-                                                        elif 0.40625 <= x/float(screen_width) and x/float(screen_width) <= 0.636458333333:
+                                                        elif 0.377083333333 <= x/float(screen_width) and x/float(screen_width) <= 0.635416666667:
                                                                 screen.blit(screen_resize(get_image(images_path + 'suspicious_selected.png')),(0,0))
                                                                 firebase.put('Board','Status',1)
                                                                 i_sended_the_alert = True
-                                                        elif 0.694791666667 <= x/float(screen_width) and x/float(screen_width) <= 0.955208333333:
+                                                        elif 0.691666666667 <= x/float(screen_width) and x/float(screen_width) <= 0.947916666667:
                                                                 screen.blit(screen_resize(get_image(images_path + 'crime_selected.png')),(0,0))
                                                                 firebase.put('Board','Status',3)
                                                                 i_sended_the_alert = True
                                         else:
-                                                if ( 0.822395833333 <= x/float(screen_width) and x/float(screen_width) <= 0.959895833333) and (0.736111111111<= y/float(screen_heigth) and y/float(screen_heigth) <= 0.940740740741) and i_sended_the_alert:
+                                                if ( 0.816666666667 <= x/float(screen_width) and x/float(screen_width) <= 0.966666666667) and (0.728125<= y/float(screen_heigth) and y/float(screen_heigth) <= 0.953125) and i_sended_the_alert:
                                                         firebase.put('Board','Status',0)
                                                  
                         last_status = alert_status
