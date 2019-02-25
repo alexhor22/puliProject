@@ -1,4 +1,5 @@
 import pygame
+import math
 from firebase import firebase
 import os
 
@@ -93,22 +94,32 @@ if __name__ == '__main__':
                                 elif event.type == pygame.MOUSEBUTTONUP:
                 		        x,y = pygame.mouse.get_pos()
                                         # print x,y
-                                        print x/float(screen_width) , y/float(screen_heigth)
-                                        
+                                        # print x/float(screen_width) , y/float(screen_heigth)
+                                        x = x/float(screen_width)
+                                        y = y/float(screen_heigth)
                                         if main_screen_is_showing:
-                                                if   0.367592592593 <= y/float(screen_heigth)  and  y/float(screen_heigth) <= 0.75462962963: #IS IN Y RANGE
-                                                        if 0.0473958333333 <= x/float(screen_width) and x/float(screen_width) <= 0.30625:
-                                                                screen.blit(screen_resize(get_image(images_path + 'pe_selected.png')),(0,0))
-                                                                firebase.put('Board','Status',2)
-                                                                i_sended_the_alert = True
-                                                        elif 0.40625 <= x/float(screen_width) and x/float(screen_width) <= 0.636458333333:
-                                                                screen.blit(screen_resize(get_image(images_path + 'suspicious_selected.png')),(0,0))
-                                                                firebase.put('Board','Status',1)
-                                                                i_sended_the_alert = True
-                                                        elif 0.694791666667 <= x/float(screen_width) and x/float(screen_width) <= 0.955208333333:
-                                                                screen.blit(screen_resize(get_image(images_path + 'crime_selected.png')),(0,0))
-                                                                firebase.put('Board','Status',3)
-                                                                i_sended_the_alert = True
+                                                yc = 0.5611111111115
+                                                pc = 0.17682291666665
+                                                sc = 0.5065104166665
+                                                cc = 0.694791666667
+                                                radius = 0.3233808796/2
+
+                                                pe_distance = math.sqrt(math.pow((x - pc),2) + math.pow((y - yc),2))
+                                                s_distance = math.sqrt(math.pow((x - sc),2) + math.pow((y - yc),2))
+                                                c_distance = math.sqrt(math.pow((x - cc),2) + math.pow((y - yc),2))
+
+                                                if pe_distance <= radius:
+                                                        screen.blit(screen_resize(get_image(images_path + 'pe_selected.png')),(0,0))
+                                                        firebase.put('Board','Status',2)
+                                                        i_sended_the_alert = True
+                                                elif s_distance <= radius:
+                                                        screen.blit(screen_resize(get_image(images_path + 'suspicious_selected.png')),(0,0))
+                                                        firebase.put('Board','Status',1)
+                                                        i_sended_the_alert = True
+                                                elif c_distance <= radius:
+                                                        screen.blit(screen_resize(get_image(images_path + 'crime_selected.png')),(0,0))
+                                                        firebase.put('Board','Status',3)
+                                                        i_sended_the_alert = True
                                         else:
                                                 if ( 0.822395833333 <= x/float(screen_width) and x/float(screen_width) <= 0.959895833333) and (0.736111111111<= y/float(screen_heigth) and y/float(screen_heigth) <= 0.940740740741) and i_sended_the_alert:
                                                         firebase.put('Board','Status',0)
