@@ -90,6 +90,10 @@ if __name__ == '__main__':
                                 if event.type == pygame.QUIT:
                                         done = True
                                         break
+                                elif event.type == pygame.KEYDOWN:
+                                        if event.key == pygame.K_ESCAPE:
+                                                done = True
+                                                break
                                 elif event.type == pygame.MOUSEBUTTONUP:
                 		        x,y = pygame.mouse.get_pos()
                                         # print x,y
