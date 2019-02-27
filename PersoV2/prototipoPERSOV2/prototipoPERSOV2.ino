@@ -22,6 +22,12 @@ bool mainMode = true;
  
 void setup() {
 
+  //GPIO DECLARATION
+  pinMode(2,OUTPUT);
+  pinMode(RED_LED,OUTPUT); //RED
+  pinMode(BLUE_LED,OUTPUT); //BLUE
+  pinMode(GREEN_LED,OUTPUT); //GREEN
+  pinMode(VIBRATOR,OUTPUT);
   
 /////////////CONFIGURACION BASICA//////////////// 
   Serial.begin(115200);
@@ -29,10 +35,24 @@ void setup() {
   //CONNECT TO WIFI
   WiFi.begin(WIFI_SSID, WIFI_PASSWORD);
   Serial.print("connecting");
+  int cont = 0;
+  bool up = true;
   while (WiFi.status() != WL_CONNECTED) {
     Serial.print(".");
-    delay(500);
+    if (up){
+      cont = cont + 20;
+      if (cont > 255) up = false;
+    }
+    else{
+      cont = cont - 20;
+      if (cont < 20) up = true;
+    }
+    analogWrite(RED_LED,cont);
+    analogWrite(BLUE_LED,cont);
+    analogWrite(GREEN_LED,cont);
+    delay(100);
   }
+//  blinkAll();
   Serial.println();
   Serial.print("connected: ");
   Serial.println(WiFi.localIP());
@@ -43,12 +63,7 @@ void setup() {
   pinMode(interruptPin, INPUT_PULLUP);
   attachInterrupt(digitalPinToInterrupt(interruptPin), handleInterrupt, FALLING);
 
-  //GPIO DECLARATION
-  pinMode(2,OUTPUT);
-  pinMode(RED_LED,OUTPUT); //RED
-  pinMode(BLUE_LED,OUTPUT); //BLUE
-  pinMode(GREEN_LED,OUTPUT); //GREEN
-  pinMode(VIBRATOR,OUTPUT);
+
 
 
   ///////////////////OTA///////////////////////////////
@@ -166,11 +181,11 @@ else{
   int t = millis();
   while(digitalRead(interruptPin) == LOW){
     yield();
-    if(sentAlert && (millis() - t) > 3000){
+    if(sentAlert && (millis() - t) > 1500){
        Firebase.setInt("Board/Status", 0);
        vibrateCancel();
        okReceived();
-       vibrate();
+//       vibrate();
        break;
     }
   }

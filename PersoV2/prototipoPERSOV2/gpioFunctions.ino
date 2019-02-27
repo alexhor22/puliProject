@@ -1,4 +1,15 @@
-
+void blinkAll(){
+  for(int i=0; i < 2; i++){
+    digitalWrite(RED_LED,HIGH);
+    digitalWrite(BLUE_LED,HIGH);
+    digitalWrite(GREEN_LED,HIGH);
+    delay(400);
+    digitalWrite(RED_LED,LOW);
+    digitalWrite(BLUE_LED,LOW);
+    digitalWrite(GREEN_LED,LOW);
+    delay(400);
+  }
+}
 
 
 
