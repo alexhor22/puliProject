@@ -11,7 +11,7 @@ pygame.init()
 screen = pygame.display.set_mode((0, 0),pygame.FULLSCREEN)
 done = False
 clock = pygame.time.Clock()
-# pygame.mouse.set_cursor((8,8),(0,0),(0,0,0,0,0,0,0,0),(0,0,0,0,0,0,0,0)) #HIDE CURSOR
+pygame.mouse.set_cursor((8,8),(0,0),(0,0,0,0,0,0,0,0),(0,0,0,0,0,0,0,0)) #HIDE CURSOR
 screen_width = 0.0
 screen_heigth = 0.0
 screen_width, screen_heigth = pygame.display.get_surface().get_size()
@@ -99,7 +99,7 @@ if __name__ == '__main__':
                                         # print x,y
                                         print x/float(screen_width) , y/float(screen_heigth)
                                         x = screen_width - x
-                                        y = screen_heigth - y
+                                        #y = screen_heigth - y
                                         
                                         if main_screen_is_showing:
                                                 if   0.359375 <= y/float(screen_heigth)  and  y/float(screen_heigth) <= 0.75625: #IS IN Y RANGE
