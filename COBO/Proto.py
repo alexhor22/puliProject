@@ -99,7 +99,6 @@ if __name__ == '__main__':
                                         # print x,y
                                         print x/float(screen_width) , y/float(screen_heigth)
                                         x = screen_width - x
-                                        #y = screen_heigth - y
                                         
                                         if main_screen_is_showing:
                                                 if   0.359375 <= y/float(screen_heigth)  and  y/float(screen_heigth) <= 0.75625: #IS IN Y RANGE
@@ -117,6 +116,12 @@ if __name__ == '__main__':
                                                                 i_sended_the_alert = True
                                         else:
                                                 if ( 0.816666666667 <= x/float(screen_width) and x/float(screen_width) <= 0.966666666667) and (0.728125<= y/float(screen_heigth) and y/float(screen_heigth) <= 0.953125) and i_sended_the_alert:
+                                                        if alert_status == 3:                  
+                                                                screen.blit(screen_resize(get_image(images_path + 'c_cancelClick.png')),(0,0))
+                                                        elif alert_status == 2:
+                                                                screen.blit(screen_resize(get_image(images_path + 'pe_cancelClick.png')),(0,0))
+                                                        elif alert_status == 1:
+                                                                screen.blit(screen_resize(get_image(images_path + 's_cancelClick.png')),(0,0))   
                                                         firebase.put('Board','Status',0)
                                                  
                         last_status = alert_status
