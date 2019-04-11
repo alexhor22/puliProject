@@ -2,10 +2,15 @@
 #include <ESP8266mDNS.h>
 #include <WiFiUdp.h>
 #include <ArduinoOTA.h>
-#include <FirebaseArduino.h>
+//#include <FirebaseArduino.h>
+#include <ESP8266HTTPClient.h>
+#include <WiFiClient.h>
+#include <ArduinoJson.h>
 
-#define FIREBASE_HOST "community-fbbae.firebaseio.com"
-#define FIREBASE_AUTH "sho28REDBEcTXyEwxyMGBaI3Zk5lc7jnEhjj2yYJ"
+StaticJsonDocument<200> doc;
+  
+//#define FIREBASE_HOST "community-fbbae.firebaseio.com"
+//#define FIREBASE_AUTH "sho28REDBEcTXyEwxyMGBaI3Zk5lc7jnEhjj2yYJ"
 #define WIFI_SSID "CelAlex"//"iPhone de Isabela"//"CelAlex"
 #define WIFI_PASSWORD "1234567890"//"isaelizceb"//"1234567890"
 #define RED_LED 16
@@ -57,7 +62,7 @@ void setup() {
   Serial.print("connected: ");
   Serial.println(WiFi.localIP());
   
-  Firebase.begin(FIREBASE_HOST, FIREBASE_AUTH);
+  //Firebase.begin(FIREBASE_HOST, FIREBASE_AUTH);
   
   //INTERRUPT
   pinMode(interruptPin, INPUT_PULLUP);
@@ -127,7 +132,7 @@ if (millis() < 60000){
 
 
 //CHECKING DB
-int dbStatus = Firebase.getInt("Board/Status");
+int dbStatus = getAPIStatus();//Firebase.getInt("Board/Status");
 if (dbStatus != lastStatus){
    vibrate();
    mainMode = false;
@@ -171,7 +176,8 @@ int clicks = 0;
  if (clicks > 0 && clicks <  4 && clicks != lastStatus){
    Serial.println("Number of Clicks:");
   Serial.println(clicks);
-  Firebase.setInt("Board/Status", clicks);
+  //Firebase.setInt("Board/Status", clicks);
+  changeAPIStatus(clicks);
   sentAlert = true;
  }
 
@@ -182,7 +188,7 @@ else{
   while(digitalRead(interruptPin) == LOW){
     yield();
     if(sentAlert && (millis() - t) > 1500){
-       Firebase.setInt("Board/Status", 0);
+       changeAPIStatus(0);
        vibrateCancel();
        okReceived();
 //       vibrate();
