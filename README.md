@@ -1,46 +1,41 @@
-# puliProject
-Proton partible/Raspberry Pi
+# Puli Project
 
-Raspberry Pi 3
-https://raspberrypi-spy.co.uk/wp-content/uploads/2012/06/Raspberry-Pi-GPIO-Layout-Model-B-Plus-rotated-2700x900.png
+This repository contains the technical development for the project Puli 001 developed by Tec de Monterrey. 
+This is the result of five years of research and development by different engeneering students, 
+that is the reason this repository is divided by dates/stages each containing the source code for different prototypes.
 
-Link funcional para instalar el modulo de RFID en RaspberryPI
-http://www.instructables.com/id/Raspberry-Pi-3-Model-B-MIFARE-RC522-RFID-Tag-Readi/
+## Perso
+Perso is the main device, it is a personal, mobile device capable of emmiting emergency alerts, received other Perso's or other Cobo's.
+The device was designed to be small, ergonomic, able to connect to wifi and give haptic feedback to the user.
 
-Habilitar LCD con Raspberry Pi con codigo de ejemplo
-https://learn.adafruit.com/character-lcd-with-raspberry-pi-or-beaglebone-black/usage
+The latest schematic a board design for the electronics can be found in the next link:
 
-RGB Pequeño (no difuso) es del tipo Common Anode, el pin mas largo se alimenta con 5V
-http://www.silvinopresa.com/how-to/arduino/rgb-led-common-annode-controlled-by-potentiometers-and-arduino/
+https://easyeda.com/alexhor22/perso-wifi
 
-DataSheet Photon Particle
-http://www.farnell.com/datasheets/1960125.pdf
+The main microcontroller for the project is a *ESP12F*.
 
-LCD
-http://www.techmake.com/00198.html
+The source code for this device is in the *Perso* folder.
 
-Threads
-https://pymotw.com/2/threading/
+## Cobo
+Cobo is a device meant to be stationary somewhere inside the house, connected to the home's wifi network. Cobo receives an emergency signal and is displayed 
+on the front screen of the device. Additionally, Cobo is able to send emergncy alerts as well as Perso. It is important to mention that Perso's and Cobo's can transmit and 
+receive alerts from other Perso's and/or Cobo's that belong to the same community.
 
-<h3> MySQL Raspberry Pi 3 </h3>
-https://pimylifeup.com/raspberry-pi-mysql-phpmyadmin/
+The cobo device is based on the *Raspberrypi 3* with a 3.5'' touch screen.
 
-http://www.hostingadvice.com/how-to/mysql-alter-table/
+The main code for Cobo is developed in python using the *pygame* library. It can be found in the *Cobo* folder.
 
+## puliApi
+puliApi is a git submodule that can be found [here](https://github.com/alexhor22/puliAPI).
 
+This submodule is an API developed in *python* with *Flask*.
 
-<h3> OpenCV Python2/Python3 </h3> 
-https://www.pyimagesearch.com/2016/04/18/install-guide-raspberry-pi-3-raspbian-jessie-opencv-3/
+The purpose for this API is to function as intermediary between the devices. The API manages the alerts, receives them and broadcast them as requested.
+The API uses a non-sql database (mongoDB) for recording the current status for a community, if the status is either "Normal" or "Emergency".  
+The API has endpoints for changing the status of a community and for reading it. This way the devices throuth http requests can read and write alerts.
 
-<h4> Face Detection OpenCV </h4>
-https://pythonprogramming.net/raspberry-pi-camera-opencv-face-detection-tutorial/
-https://www.youtube.com/watch?v=1I4gHpctXbU
+The API is up and running on *Heroku* in the following URL:
 
+http://puliapi.herokuapp.com/
 
-<h4> Diseño de cargador para wearable </h4>
-https://dlnmh9ip6v2uc.cloudfront.net/datasheets/Prototyping/TP4056.pdf
-http://www.instructables.com/id/Arduino-Battery-Shield/
-
-<h4> Version final de codigo en Raspberry </h4>
-/home/pi/Documents/puliProject/Placa/SPI-Py/MFRC522-python/rfidTestStates_ButtonsFaster.py
-/home/pi/Documents/puliProject/Placa/SPI-Py/MFRC522-python/detectFaceLedSound.py 
+If accesed througth the web browser a very simple menu can be seen for managing communities and manually change the status associated to the community.
